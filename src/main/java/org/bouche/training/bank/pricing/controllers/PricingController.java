@@ -38,15 +38,19 @@ public class PricingController {
 		pricingService.addPricing(pricing);
 		
 	}
-	@GetMapping("/hello")
-	public void HelloWorl()
-			 {	
-		String H = "Hello World";
-		return H;
-		
-	}
-		
-	}
+	@Override
+    public List<Pricing> getListPricing()
+             throws PricingNotFoundException{
+        Iterator<Pricing> liste = pricingRepository.findAll().iterator();
+        if (liste.hasNext() == false) {
+            throw new PricingNotFoundException("There is no pricing");
+        }
+        List<Pricing> response = new ArrayList<Pricing>();
+        while (liste.hasNext() == true) {
+            response.add(liste.next());
+        }
+        return response;
+    }
 	
 }
 
