@@ -38,7 +38,7 @@ public class PricingController {
 		pricingService.addPricing(pricing);
 		
 	}
-	@PostMapping("/pricing")
+	@GetMapping("/pricing")
 	public void doublePricing(@PathVariable int pricingId)
 			throws PricingNotFoundException {	
 		pricingService.getPricingById(pricingId) = pricingService.getPricingById(pricingId)*2;
