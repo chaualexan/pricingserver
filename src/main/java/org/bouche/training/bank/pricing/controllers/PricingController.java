@@ -38,12 +38,11 @@ public class PricingController {
 		pricingService.addPricing(pricing);
 		
 	}
-	@GetMapping("/pricing")
-	public void doublePricing(@PathVariable int pricingId)
-			throws PricingNotFoundException {	
-		pricingService.getPricingById(pricingId) = pricingService.getPricingById(pricingId)*2;
-		
-		return pricingService.getPricingById(pricingId);
+	@GetMapping("/hello")
+	public void HelloWorl()
+			 {	
+		String H = "Hello World";
+		return H;
 		
 	}
 		
